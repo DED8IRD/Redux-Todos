@@ -12,6 +12,24 @@ import {
 } from './actions'
 
 const store = createStore(reducer)
+// log the initial state
+console.log(store.getState())
+
+// log every state change
+// note: subscribe() returns a function for unregistering the listener
+// (similar to setInterval() returning id for clearInterval())
+const unsubscribe = store.subscribe(() => console.log(store.getState()))
+
+// dispatch actions 
+store.dispatch(addTodo('wash cat'))
+store.dispatch(addTodo('butter plates'))
+store.dispatch(addTodo('terrorize neighbor'))
+store.dispatch(toggleTodo('wash cat'))
+store.dispatch(toggleTodo('butter plates'))
+store.dispatch(setVisibilityFilter(VisibilityFilters.SHOW_COMPLETED))
+
+// stop listening to state updates 
+unsubscribe()
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

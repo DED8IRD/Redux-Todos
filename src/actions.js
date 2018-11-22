@@ -20,7 +20,7 @@ export function addTodo(text) {
 	}
 }
 
-export function toggletodo(idx) {
+export function toggleTodo(idx) {
 	return {
 		type: TOGGLE_TODO, 
 		idx
