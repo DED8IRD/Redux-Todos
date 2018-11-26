@@ -29,9 +29,6 @@ store.dispatch(toggleTodo('wash cat'))
 store.dispatch(toggleTodo('butter plates'))
 store.dispatch(setVisibilityFilter(VisibilityFilters.SHOW_COMPLETED))
 
-// stop listening to state updates 
-unsubscribe()
-
 const app = (
 	<Provider store={store}>
 		<App />
@@ -40,6 +37,9 @@ const app = (
 
 ReactDOM.render(app, 
 	document.getElementById('root'));
+
+// stop listening to state updates 
+unsubscribe()
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
