@@ -1,10 +1,10 @@
 // Link.js
 import React from 'react';
 
-const Link = ({active, children, onClick}) => {
-  if (active) {
+const Link = (props) => {
+  if (props.active) {
 	  return (
-	    <span>{children}</span>
+	    <span>{props.children}</span>
 	  )
   } 
   return (
@@ -12,10 +12,10 @@ const Link = ({active, children, onClick}) => {
   		href=""
   		onClick={(evt) => {
   			evt.preventDefault()
-  			onClick()
+  			props.onClick()
   		}}
 		>
-			{children}
+			{props.children}
 		</a>
   )
 }

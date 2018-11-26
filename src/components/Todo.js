@@ -1,15 +1,15 @@
 // Todo.js
 import React from 'react';
 
-const Todo = ({onClick, completed, text}) => {
+const Todo = (props) => {
   return (
     <li 
-    	onClick={onClick}
+    	onClick={props.onClick}
     	style={{
-    		textDecoration: completed ? 'line-through' : 'none'
+    		textDecoration: props.completed ? 'line-through' : 'none'
     	}}
     >
-    	{text}
+    	{props.text}
     </li>
   )
 }
