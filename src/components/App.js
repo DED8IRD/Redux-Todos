@@ -1,8 +1,6 @@
 import React from 'react';
-import TodoList from './TodoList'
-import Link from './Link'
 import Filters from './Filters'
-// import {FilterLink, VisibleTodoList} from '../containers'
+import VisibleTodoList from '../containers/VisibleTodoList'
 
 export default class App extends React.Component {
 	constructor(props) {
@@ -11,7 +9,10 @@ export default class App extends React.Component {
 
 	render() {
 		return (
-			<div></div>
+			<div>
+				<VisibleTodoList />
+				<Filters />
+			</div>
 		);
 	}
 }
